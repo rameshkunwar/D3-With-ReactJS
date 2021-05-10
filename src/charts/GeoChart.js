@@ -455,16 +455,19 @@ const BarChart = ({ chartRef }) => {
 
   function reset() {
    //removeChart();
-   kommune = "";
-   svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
-   d3.selectAll("path").transition().attr("fill", "teal");
+
+   const rrr = d3.select("#chartRect");
+   rrr.style("opacity", 0);
+   rrr.remove();
 
    d3.selectAll("#chartBars").remove();
    d3.selectAll("#introText").remove();
    d3.selectAll("#labelText").remove();
    d3.selectAll("#valueText").remove();
 
-   //d3.select("#myChart").transition().duration(750).remove();
+   kommune = "";
+   svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
+   d3.selectAll("path").transition().attr("fill", "teal");
 
    //initD3();
   }
@@ -487,5 +490,6 @@ const BarChart = ({ chartRef }) => {
   }
  };
  return null;
+ //  return <div id='mycomp' ref={mycompRef}></div>;
 };
 export default BarChart;
