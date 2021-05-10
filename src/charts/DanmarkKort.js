@@ -34,7 +34,11 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
 
  useEffect(() => {
   if (widthHeightScale !== null) {
-   drawGeoMap({ ...widthHeightScale });
+   const params = {
+    ...widthHeightScale,
+    featureDataArray: landKortData.features,
+   };
+   drawGeoMap({ ...params });
   }
  }, [landKortData]);
 
@@ -43,6 +47,7 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
    //drawGeoMap();
    const params = { ...widthHeightScale, kommunalData: localData };
    drawSingleKommune({ ...params });
+   // drawGeoMap({ ...params });
   }
  }, [localData]);
 
@@ -52,10 +57,12 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
   console.log({ item });
   //   let prop = d.path[0].__data__.properties;
   //   console.info({ prop });
-  setLocalData(item);
+  const individualKommuneData = [];
+  individualKommuneData.push(item);
+  setLocalData(individualKommuneData);
  };
 
- const drawGeoMap = ({ height, width, scale }) => {
+ const drawGeoMap = ({ height, width, scale, featureDataArray }) => {
   //   const lattop = 57.9;
   //   const lonleft = 7.8;
   //   const lonright = 15.3;
@@ -110,7 +117,8 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
 
   g.selectAll("path")
    .append("g")
-   .data(landKortData.features)
+   .data(featureDataArray)
+   //    .data(landKortData.features)
    .enter()
    .append("path")
    .attr("d", path)
@@ -155,12 +163,12 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
    .attr("height", height);
 
   const g = svg.append("g");
-  const individualFeature = [];
-  individualFeature.push(kommunalData);
+  //   const individualFeature = [];
+  //   individualFeature.push(kommunalData);
 
   g.selectAll("path")
    .append("g")
-   .data(individualFeature)
+   .data(kommunalData)
    .enter()
    .append("path")
    .attr("d", path)
