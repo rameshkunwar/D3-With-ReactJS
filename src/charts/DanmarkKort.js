@@ -40,7 +40,9 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
 
  useLayoutEffect(() => {
   if (localData.length !== 0) {
-   drawGeoMap();
+   //drawGeoMap();
+   const params = { ...widthHeightScale, kommunalData: localData };
+   drawSingleKommune({ ...params });
   }
  }, [localData]);
 
@@ -122,7 +124,55 @@ function DanmarkKort({ width, height, landKortData, svgParentDivRef }) {
    });
  }; /** end of function drawGeoMap */
 
- function drawSingleKommune() {}
+ function drawSingleKommune({ height, width, scale, kommunalData }) {
+  //projection
+  let projection = d3.geoMercator().scale(scale).translate([0, 0]);
+  const projectionPoint = projection([lonleft, lattop]);
+
+  if (!projectionPoint) alert("obs! invalid projection point from projection");
+
+  console.info(
+   "projectionPoint: " + projectionPoint[0] + " - " + projectionPoint[1]
+  );
+
+  projection.translate([-1 * projectionPoint[0], -1 * projectionPoint[1]]);
+
+  //define path generator
+  const path = d3.geoPath(projection);
+
+  //create svg element
+  const svg = d3
+   .select(localDivRef.current)
+   .append("svg")
+   .attr("id", "dkkort")
+   .attr("width", width)
+   .attr("height", height);
+
+  svg
+   .append("rect")
+   .attr("class", "background")
+   .attr("width", width)
+   .attr("height", height);
+
+  const g = svg.append("g");
+  const individualFeature = [];
+  individualFeature.push(kommunalData);
+
+  g.selectAll("path")
+   .append("g")
+   .data(individualFeature)
+   .enter()
+   .append("path")
+   .attr("d", path)
+   .attr("fill", "teal")
+   .attr("stroke", "lightgray")
+   .attr("stroke-width", "0.2")
+   .on("click", (d, item) => {
+    let komm = item.properties;
+    console.info({ komm });
+    handleClick(d, item);
+   });
+ }
 
  return (
   <div className='kort-placeholder' ref={localDivRef}>
