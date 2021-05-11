@@ -7,11 +7,15 @@ import {
  useState,
 } from "react";
 
-const GeoDanmark = ({ chartRef }) => {
+import DenmarkGeo from "../src/assets/DenmarkGeo.json";
+
+const BarChart = ({ chartRef }) => {
  const lattop = 57.9;
  const lonleft = 7.8;
  const lonright = 15.3;
  const scalemap = 56;
+
+ const farver = ["#002883", "#982721", "#0c6a4b", "#777777", "#cfcfcf"];
 
  const [totalWidth, setTotalWidth] = useState(0);
  const [windowInnerHeight, setWindowInnerHeight] = useState(0);
@@ -125,7 +129,9 @@ const GeoDanmark = ({ chartRef }) => {
   //   });
 
   d3
-   .csv("https://raw.githubusercontent.com/kgronpug/d3map/master/ordTimer.csv")
+   .csv(
+    "https://raw.githubusercontent.com/rameshkunwar/D3-With-ReactJS/master/public/kommuneMapping.csv"
+   )
    .then(function (csv) {
     csv.forEach((d) => {
      d.VALUE = +d.VALUE;
@@ -134,6 +140,7 @@ const GeoDanmark = ({ chartRef }) => {
     let maxValue = d3.max(csv, (d) => {
      return d.VALUE;
     });
+    console.info("maxValue of d.VALUE: " + maxValue);
 
     //Load GeoJSON data
     //   let json = await d3.json(require("../src/assets/kommuner2.json"));
@@ -149,6 +156,7 @@ const GeoDanmark = ({ chartRef }) => {
        //Grab data value, and convert from string to float
        let csvValue = parseFloat(csv[i].VALUE);
        let csvRegion = csv[i].REGION;
+       let kommuneGroupId = csv[i].KOMMGROUPKODE;
 
        for (let j = 0; j < json.features.length; j++) {
         let jsonKom = json.features[j].properties.KOMNAVN;
@@ -168,7 +176,12 @@ const GeoDanmark = ({ chartRef }) => {
        .enter()
        .append("path")
        .attr("d", path)
-       .attr("fill", "teal")
+       //  .attr("fill", "teal")
+       .attr("fill", function (d) {
+        const random = Math.floor(Math.random() * farver.length);
+        console.info(random, farver[random]);
+        return farver[random];
+       })
        .attr("stroke", "lightgray")
        .attr("stroke-width", "0.2")
        .on("click", clicked)
@@ -233,40 +246,85 @@ const GeoDanmark = ({ chartRef }) => {
         );
        }); /** end of ChartData */
 
-       var filteredFeatures = json.features.filter(function (f) {
-        return f.properties.KOMNAVN == kommune;
-       });
+       //LET'S GATE all kommunes within kommune group id
+       let kommKoder = [];
+       let csvKommuneId = csv.filter((x) => x.KOMNAVN === d.properties.KOMNAVN);
+       if (csvKommuneId.length > 0) {
+        let grpId = csvKommuneId[0].KOMMGROUPKODE;
+        let allGroupKomm = csv.filter((x) => x.KOMMGROUPKODE == grpId);
+        if (allGroupKomm.length > 0) {
+         allGroupKomm.forEach((ele, index) => {
+          kommKoder.push(ele.KOMNAVN);
+         });
+        }
 
-       var kommuneFeatures = {
-        type: "FeatureCollection",
-        features: filteredFeatures,
-       };
-
-       var bounds = path.bounds(kommuneFeatures),
-        dx = bounds[1][0] - bounds[0][0],
-        dy = bounds[1][1] - bounds[0][1],
-        x = (bounds[0][0] + bounds[1][0]) / 2,
-        y = (bounds[0][1] + bounds[1][1]) / 2,
-        scale = Math.max(
-         1,
-         Math.min(zoomExtent, 0.95 / Math.max(dx / w, dy / h))
-        ),
-        translate = [w / 2 - scale * x, h / 2 - scale * y];
-
-       svg
-        .transition()
-        .duration(750)
-        .call(
-         zoom.transform,
-         d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
+        let newFilteredFeatures = json.features.filter((item) =>
+         kommKoder.includes(item.properties.KOMNAVN)
         );
 
-       d3
-        .selectAll("path")
-        .filter(function (d) {
-         return d.properties.KOMNAVN == kommune;
-        })
-        .attr("fill", "darkred");
+        var NEWkommuneFeatures = {
+         type: "FeatureCollection",
+         features: newFilteredFeatures,
+        };
+        var bounds = path.bounds(NEWkommuneFeatures),
+         dx = bounds[1][0] - bounds[0][0],
+         dy = bounds[1][1] - bounds[0][1],
+         x = (bounds[0][0] + bounds[1][0]) / 2,
+         y = (bounds[0][1] + bounds[1][1]) / 2,
+         scale = Math.max(
+          1,
+          Math.min(zoomExtent, 0.95 / Math.max(dx / w, dy / h))
+         ),
+         translate = [w / 2 - scale * x, h / 2 - scale * y];
+
+        svg
+         .transition()
+         .duration(750)
+         .call(
+          zoom.transform,
+          d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
+         );
+
+        d3
+         .selectAll("path")
+         .filter((x) => kommKoder.includes(x.properties.KOMNAVN))
+         .attr("fill", "darkred");
+       } else {
+        var filteredFeatures = json.features.filter(function (f) {
+         return f.properties.KOMNAVN == kommune;
+        });
+
+        var kommuneFeatures = {
+         type: "FeatureCollection",
+         features: filteredFeatures,
+        };
+
+        var bounds = path.bounds(kommuneFeatures),
+         dx = bounds[1][0] - bounds[0][0],
+         dy = bounds[1][1] - bounds[0][1],
+         x = (bounds[0][0] + bounds[1][0]) / 2,
+         y = (bounds[0][1] + bounds[1][1]) / 2,
+         scale = Math.max(
+          1,
+          Math.min(zoomExtent, 0.95 / Math.max(dx / w, dy / h))
+         ),
+         translate = [w / 2 - scale * x, h / 2 - scale * y];
+
+        svg
+         .transition()
+         .duration(750)
+         .call(
+          zoom.transform,
+          d3.zoomIdentity.translate(translate[0], translate[1]).scale(scale)
+         );
+
+        d3
+         .selectAll("path")
+         .filter(function (d) {
+          return d.properties.KOMNAVN == kommune;
+         })
+         .attr("fill", "darkred");
+       }
 
        drawChart(ChartData, maxValue);
       } //clicked ends
@@ -303,39 +361,40 @@ const GeoDanmark = ({ chartRef }) => {
     .transition()
     .delay(0)
     .duration(750)
-    .style("opacity", 0.85)
+    // .style("opacity", 0.85)
     .attr("width", w)
+    .style("opacity", 0)
     .attr("height", h)
     .attr("x", 0)
     .attr("y", 0);
 
    //Titel tekst
-   svg
-    .append("text")
-    .attr("id", "introText")
-    .attr("font-size", h * 0.055)
-    .style("opacity", 0)
-    .attr("x", w * 0.1)
-    .attr("y", h * 0.12)
-    .transition()
-    .delay(500)
-    .duration(750)
-    .style("opacity", 1)
-    .text("Hoved Titel her");
+   //  svg
+   //   .append("text")
+   //   .attr("id", "introText")
+   //   .attr("font-size", h * 0.055)
+   //   .style("opacity", 0)
+   //   .attr("x", w * 0.1)
+   //   .attr("y", h * 0.12)
+   //   .transition()
+   //   .delay(500)
+   //   .duration(750)
+   //   .style("opacity", 1)
+   //   .text("Hoved Titel her");
 
-   //Beskrivende tekst
-   svg
-    .append("text")
-    .attr("id", "introText")
-    .attr("font-size", h * 0.04)
-    .style("opacity", 0)
-    .attr("x", w * 0.1)
-    .attr("y", h * 0.17)
-    .transition()
-    .delay(500)
-    .duration(750)
-    .style("opacity", 1)
-    .text("Sub Titel");
+   //  //Beskrivende tekst
+   //  svg
+   //   .append("text")
+   //   .attr("id", "introText")
+   //   .attr("font-size", h * 0.04)
+   //   .style("opacity", 0)
+   //   .attr("x", w * 0.1)
+   //   .attr("y", h * 0.17)
+   //   .transition()
+   //   .delay(500)
+   //   .duration(750)
+   //   .style("opacity", 1)
+   //   .text("Sub Titel");
    //  svg
    //   .append("text")
    //   .attr("id", "introText")
@@ -350,89 +409,95 @@ const GeoDanmark = ({ chartRef }) => {
    //   .text("samtidig med at de har modtaget kontanthjælp i november 2017.");
 
    //Bars til figuren
-   svg
-    .selectAll("chartBars")
-    .data(ChartData)
-    .enter()
-    .append("g")
-    .append("rect")
-    .attr("width", 0)
-    .attr("height", h * 0.13)
-    .attr("x", w * 0.1)
-    .attr("y", function (d, i) {
-     return i * (h * 0.2) + h * 0.35;
-    })
-    .attr("id", "chartBars")
-    .attr("fill", "teal")
-    .transition()
-    .delay(500)
-    .duration(750)
-    .attr("width", function (d, i) {
-     return (d.VALUE / 26) * (w * 0.8);
-    });
+   //  svg
+   //   .selectAll("chartBars")
+   //   .data(ChartData)
+   //   .enter()
+   //   .append("g")
+   //   .append("rect")
+   //   .attr("width", 0)
+   //   .attr("height", h * 0.13)
+   //   .attr("x", w * 0.1)
+   //   .attr("y", function (d, i) {
+   //    return i * (h * 0.2) + h * 0.35;
+   //   })
+   //   .attr("id", "chartBars")
+   //   .attr("fill", "teal")
+   //   .transition()
+   //   .delay(500)
+   //   .duration(750)
+   //   .attr("width", function (d, i) {
+   //    return (d.VALUE / 26) * (w * 0.8);
+   //   });
 
-   svg
-    .selectAll("labelText")
-    .data(ChartData)
-    .enter()
-    .append("text")
-    .attr("id", "labelText")
-    .attr("font-size", h * 0.055)
-    .style("opacity", 0)
-    .attr("x", w * 0.1)
-    .attr("y", function (d, i) {
-     return i * (h * 0.2) + h * 0.335;
-    })
-    .transition()
-    .delay(500)
-    .duration(750)
-    .style("opacity", 1)
-    .text(function (d) {
-     return d.KOMNAVN;
-    });
+   //  svg
+   //   .selectAll("labelText")
+   //   .data(ChartData)
+   //   .enter()
+   //   .append("text")
+   //   .attr("id", "labelText")
+   //   .attr("font-size", h * 0.055)
+   //   .style("opacity", 0)
+   //   .attr("x", w * 0.1)
+   //   .attr("y", function (d, i) {
+   //    return i * (h * 0.2) + h * 0.335;
+   //   })
+   //   .transition()
+   //   .delay(500)
+   //   .duration(750)
+   //   .style("opacity", 1)
+   //   .text(function (d) {
+   //    return d.KOMNAVN;
+   //   });
 
-   svg
-    .selectAll("valueText")
-    .data(ChartData)
-    .enter()
-    .append("text")
-    .attr("id", "valueText")
-    .attr("text-anchor", "end")
-    .attr("font-size", h * 0.06)
-    .style("fill", function (d) {
-     if (d.VALUE < 1) {
-      return "black";
-     } else {
-      return "white";
-     }
-    })
-    .style("opacity", 0)
-    .attr("x", function (d) {
-     return d3.max([(d.VALUE / maxValue) * (w * 0.8) + w * 0.08, w * 0.12]);
-    })
-    .attr("y", function (d, i) {
-     return i * (h * 0.2) + h * 0.435;
-    })
-    .transition()
-    .delay(1000)
-    .duration(750)
-    .style("opacity", 1)
-    .text(function (d) {
-     if (d.VALUE == 0) {
-      return "-";
-     } else {
-      return d3.format(".1f")(d.VALUE);
-     }
-    });
+   //  svg
+   //   .selectAll("valueText")
+   //   .data(ChartData)
+   //   .enter()
+   //   .append("text")
+   //   .attr("id", "valueText")
+   //   .attr("text-anchor", "end")
+   //   .attr("font-size", h * 0.06)
+   //   .style("fill", function (d) {
+   //    if (d.VALUE < 1) {
+   //     return "black";
+   //    } else {
+   //     return "white";
+   //    }
+   //   })
+   //   .style("opacity", 0)
+   //   .attr("x", function (d) {
+   //    return d3.max([(d.VALUE / maxValue) * (w * 0.8) + w * 0.08, w * 0.12]);
+   //   })
+   //   .attr("y", function (d, i) {
+   //    return i * (h * 0.2) + h * 0.435;
+   //   })
+   //   .transition()
+   //   .delay(1000)
+   //   .duration(750)
+   //   .style("opacity", 1)
+   //   .text(function (d) {
+   //    if (d.VALUE == 0) {
+   //     return "-";
+   //    } else {
+   //     return d3.format(".1f")(d.VALUE);
+   //    }
+   //   });
   }
 
   function removeChart() {
-   d3
-    .select(chartRef.current)
-    .transition()
-    .duration(750)
-    .style("opacity", 0)
-    .remove();
+   //  d3
+   //   .select(chartRef.current)
+   //   .transition()
+   //   .duration(750)
+   //   .style("opacity", 0)
+   //   .remove();
+   const chartRectObj = d3.select("#chartRect");
+   chartRectObj.transition().duration(750);
+
+   chartRectObj.style("opacity", 0);
+   chartRectObj.remove();
+
    d3.selectAll("#chartBars").remove();
    d3.selectAll("#introText").remove();
    d3.selectAll("#labelText").remove();
@@ -465,7 +530,13 @@ const GeoDanmark = ({ chartRef }) => {
 
    kommune = "";
    svg.transition().duration(750).call(zoom.transform, d3.zoomIdentity);
-   d3.selectAll("path").transition().attr("fill", "teal");
+   d3
+    .selectAll("path")
+    .transition()
+    .attr("fill", function (d) {
+     const random = Math.floor(Math.random() * farver.length);
+     return farver[random];
+    });
 
    //initD3();
   }
@@ -490,4 +561,4 @@ const GeoDanmark = ({ chartRef }) => {
  return null;
  //  return <div id='mycomp' ref={mycompRef}></div>;
 };
-export default GeoDanmark;
+export default BarChart;
