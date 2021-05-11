@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import axios from "axios";
 import DanmarkKort from "./charts/DanmarkKort";
+import GeoDanmark from "./charts/GeoChart";
 
 function App() {
  const [mapData, setMapData] = useState([]);
@@ -26,14 +27,15 @@ function App() {
 
  return (
   <div className='App'>
-   <h2>D3 med kort eksempel</h2>
-   <div ref={kortRef}>
-    <DanmarkKort
+   {/* <h2>D3 med kort eksempel</h2> */}
+   <div id='dkgeo' ref={kortRef}>
+    {/* <DanmarkKort
      width={800}
      height={600}
      landKortData={mapData}
      svgParentDivRef={kortRef}
-    />
+    /> */}
+    <GeoDanmark chartRef={kortRef} />
    </div>
   </div>
  );

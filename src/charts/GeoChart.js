@@ -7,9 +7,7 @@ import {
  useState,
 } from "react";
 
-import DenmarkGeo from "../src/assets/DenmarkGeo.json";
-
-const BarChart = ({ chartRef }) => {
+const GeoDanmark = ({ chartRef }) => {
  const lattop = 57.9;
  const lonleft = 7.8;
  const lonright = 15.3;
@@ -492,4 +490,4 @@ const BarChart = ({ chartRef }) => {
  return null;
  //  return <div id='mycomp' ref={mycompRef}></div>;
 };
-export default BarChart;
+export default GeoDanmark;
