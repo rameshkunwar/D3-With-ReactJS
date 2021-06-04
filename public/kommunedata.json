@@ -1,0 +1,737 @@
+[
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 165,
+   "KOMNAVN": "Albertslund",
+   "VALUE": 11.6,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Allerød",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 151,
+   "KOMNAVN": "Ballerup",
+   "VALUE": 8.3,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Brøndby",
+   "KOMMKODE": 7.8,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Egedal",
+   "KOMMKODE": 6.5,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Fredensborg",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Frederiksberg",
+   "KOMMKODE": 6.9,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Frederikssund",
+   "KOMMKODE": 9.1,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Furesø",
+   "KOMMKODE": 8.6,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Gentofte",
+   "KOMMKODE": 6.8,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Gladsaxe",
+   "KOMMKODE": 8.5,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 161,
+   "KOMNAVN": "Glostrup",
+   "VALUE": 9.5,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Gribskov",
+   "KOMMKODE": 6.4,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Halsnæs",
+   "KOMMKODE": 10.2,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Helsingør",
+   "KOMMKODE": 7.6,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 163,
+   "KOMNAVN": "Herlev",
+   "VALUE": 6.9,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Hillerød",
+   "KOMMKODE": 10.3,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Hvidovre",
+   "KOMMKODE": 7.2,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Høje Taastrup",
+   "KOMMKODE": 8.6,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Hørsholm",
+   "KOMMKODE": 11.8,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "København",
+   "KOMMKODE": 6.5,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Lyngby-Taarbæk",
+   "KOMMKODE": 9.6,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Rudersdal",
+   "KOMMKODE": 6.4,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 175,
+   "KOMNAVN": "Rødovre",
+   "VALUE": 7.5,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Dragør",
+   "KOMMKODE": 6.8,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Tårnby",
+   "KOMMKODE": 5.2,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Ishøj",
+   "KOMMKODE": 12.4,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "1",
+   "KOMMKODE": 187,
+   "KOMNAVN": "Vallensbæk",
+   "VALUE": 12.4,
+   "REGION": "Region Hovedstaden"
+ },
+ {
+   "KOMMGROUPKODE": "Faxe",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Greve",
+   "KOMMKODE": 9.9,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Guldborgsund",
+   "KOMMKODE": 8.2,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Holbæk",
+   "KOMMKODE": 7,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Kalundborg",
+   "KOMMKODE": 7.2,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Køge",
+   "KOMMKODE": 8.5,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Lejre",
+   "KOMMKODE": 10.2,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Lolland",
+   "KOMMKODE": 6.7,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Næstved",
+   "KOMMKODE": 7,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Odsherred",
+   "KOMMKODE": 10.9,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Ringsted",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Roskilde",
+   "KOMMKODE": 8.4,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Slagelse",
+   "KOMMKODE": 6.5,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Solrød",
+   "KOMMKODE": 10.8,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Sorø",
+   "KOMMKODE": 10,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Stevns",
+   "KOMMKODE": 6.9,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Vordingborg",
+   "KOMMKODE": 10.3,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Bornholm",
+   "KOMMKODE": 10.1,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Assens",
+   "KOMMKODE": 9,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Faaborg-Midtfyn",
+   "KOMMKODE": 9.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Kerteminde",
+   "KOMMKODE": 6.1,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Langeland",
+   "KOMMKODE": 6.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Nordfyns",
+   "KOMMKODE": 9.9,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Nyborg",
+   "KOMMKODE": 10.9,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Odense",
+   "KOMMKODE": 7.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Svendborg",
+   "KOMMKODE": 10.2,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Ærø",
+   "KOMMKODE": 12.5,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Aabenraa",
+   "KOMMKODE": 11.4,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Billund",
+   "KOMMKODE": 3.6,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Esbjerg/Fanø",
+   "KOMMKODE": 6.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Esbjerg",
+   "KOMMKODE": 6.4,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Fanø",
+   "KOMMKODE": 0,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Fredericia",
+   "KOMMKODE": 9.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Haderslev",
+   "KOMMKODE": 8.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Kolding",
+   "KOMMKODE": 9,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Middelfart",
+   "KOMMKODE": 6.5,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Sønderborg",
+   "KOMMKODE": 10.5,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Tønder",
+   "KOMMKODE": 6.4,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Varde",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Vejen",
+   "KOMMKODE": 8.3,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Vejle",
+   "KOMMKODE": 10.9,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Aarhus",
+   "KOMMKODE": 7.3,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Favrskov",
+   "KOMMKODE": 15,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Hedensted",
+   "KOMMKODE": 16.8,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Horsens",
+   "KOMMKODE": 8,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Norddjurs",
+   "KOMMKODE": 5.4,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Odder",
+   "KOMMKODE": 8.3,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Randers",
+   "KOMMKODE": 6.6,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Samsø",
+   "KOMMKODE": 25.8,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Silkeborg",
+   "KOMMKODE": 10.8,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Skanderborg",
+   "KOMMKODE": 9.4,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Syddjurs",
+   "KOMMKODE": 8.3,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Herning",
+   "KOMMKODE": 12.1,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Holstebro",
+   "KOMMKODE": 8.9,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Ikast-Brande",
+   "KOMMKODE": 8.8,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Lemvig",
+   "KOMMKODE": 9.1,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Ringkøbing-Skjern",
+   "KOMMKODE": 9.4,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Skive",
+   "KOMMKODE": 6.4,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Struer",
+   "KOMMKODE": 7.7,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Viborg",
+   "KOMMKODE": 9.5,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Aalborg",
+   "KOMMKODE": 6.3,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Brønderslev",
+   "KOMMKODE": 8,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Frederikshavn",
+   "KOMMKODE": 10.6,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Læsø",
+   "KOMMKODE": 12.5,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Hjørring",
+   "KOMMKODE": 9.4,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Jammerbugt",
+   "KOMMKODE": 11.6,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Mariagerfjord",
+   "KOMMKODE": 9.6,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Morsø",
+   "KOMMKODE": 9.4,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Rebild",
+   "KOMMKODE": 14.9,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Thisted",
+   "KOMMKODE": 7.1,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Vesthimmerlands",
+   "KOMMKODE": 8.2,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Region Hovedstaden",
+   "KOMMKODE": 7.4,
+   "KOMNAVN": "Region Hovedstaden",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Region Sjælland",
+   "KOMMKODE": 7.9,
+   "KOMNAVN": "Region Sjælland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Region Syddanmark",
+   "KOMMKODE": 8.4,
+   "KOMNAVN": "Region Syddanmark",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Region Midtjylland",
+   "KOMMKODE": 8.5,
+   "KOMNAVN": "Region Midtjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Region Nordjylland",
+   "KOMMKODE": 8.1,
+   "KOMNAVN": "Region Nordjylland",
+   "VALUE": null,
+   "REGION": ""
+ },
+ {
+   "KOMMGROUPKODE": "Hele landet",
+   "KOMMKODE": 7.9,
+   "KOMNAVN": "Hele landet",
+   "VALUE": null,
+   "REGION": ""
+ }
+]
