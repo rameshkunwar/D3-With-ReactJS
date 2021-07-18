@@ -141,7 +141,10 @@ const BarChart = ({ chartRef }) => {
       //Load GeoJSON data
       //   let json = await d3.json(require("../src/assets/kommuner2.json"));
       d3.json(
-        "https://raw.githubusercontent.com/kgronpug/d3map/master/kommuner2.json"
+        //"https://raw.githubusercontent.com/kgronpug/d3map/master/kommuner2.json"
+        //"/kommuner2.json"
+        // "./d3_bornholm_moved.json"
+        "./d3_bornholm_with_rectangle.json"
       ).then(function (json) {
         for (let i = 0; i < csv.length; i++) {
           //Grab state name
@@ -171,6 +174,11 @@ const BarChart = ({ chartRef }) => {
           .append("path")
           .attr("d", path)
           //  .attr("fill", "teal")
+          .attr("class", (d) => {
+            if (d.properties.name == "bornholm-rectangle") {
+              return "bornholm-rectangle";
+            }
+          })
           .attr("fill", function (d) {
             const random = Math.floor(Math.random() * farver.length);
             console.info(random, farver[random]);

@@ -1,3 +1,8 @@
 rect.background {
   fill: #5f9ea0;
 }
+.bornholm-rectangle {
+  fill: none;
+  stroke: black;
+  stroke-width: 0.1;
+}
