@@ -3,6 +3,7 @@ import axios from "axios";
 import DanmarkKort from "./charts/DanmarkKort";
 import GeoDanmark from "./charts/GeoChart";
 import BarChart from "./charts/GeoChart";
+import DynamicWidth from "./components/DynamicWidth";
 
 function App() {
   //   const [mapData, setMapData] = useState([]);
@@ -35,7 +36,8 @@ function App() {
      landKortData={mapData}
      svgParentDivRef={kortRef}
     /> */}
-        <BarChart chartRef={kortRef} />
+        {/* <BarChart chartRef={kortRef} /> */}
+        <DynamicWidth />
       </div>
     </div>
   );
